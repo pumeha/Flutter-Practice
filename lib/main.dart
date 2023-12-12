@@ -59,11 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           FilledButton(onPressed: () =>{
-
-            showDialog(context: context,barrierDismissible: false, builder: (context){
-              return Center(child:
-              CircularProgressIndicator(),);
-            })
+            context.read<counterProvider>().displayDialog(context)
           }, child: const Text('Show Dialog')),
 
 

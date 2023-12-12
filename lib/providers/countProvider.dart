@@ -18,4 +18,15 @@ class counterProvider with ChangeNotifier{
     load = !load;
   }
 
+  void displayDialog(BuildContext context){
+    showDialog(context: context,barrierDismissible: false, builder: (context){
+      return const Center(child:
+      CircularProgressIndicator(),);
+    });
+
+    Future.delayed(const Duration(seconds: 10),(){
+      Navigator.pop(context);
+    });
+  }
+
 }
